@@ -10,7 +10,8 @@ function basicListener(req, res){
     res.writeHead(200, {
         "Content-Type": "text/plan"
     });
-    res.write('Hi everybody! Page loaded ' + count + ' times.');
+    res.write('Hi everybody! Page loaded ' + count + ' times.\n');
+    res.write('\nRunning on ' + process.platform + '\n');
     res.end();
     if (url.parse(req.url).path.startsWith('/stop')) {
         console.log("Request to: " + req.url);
